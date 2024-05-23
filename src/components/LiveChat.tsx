@@ -48,22 +48,29 @@ function LiveChat() {
             messages.map((message) => (
               <li
                 className={`${user?.uid === message.uid ? 'text-green-400' : 'text-blue-500'}`}
-                key={message.uid}
+                key={message.createdAt}
               >
                 {message.text}
               </li>
             ))}
         </ul>
         <div className="absolute inset-0 flex size-full items-end justify-center pb-10">
-          <form onSubmit={handleCreateMessage}>
+          <form
+            className="flex items-center rounded-2xl border border-white/10"
+            onSubmit={handleCreateMessage}
+          >
             <input
+              className="ml-2 bg-transparent p-2 px-3.5 outline-none"
               value={newMessage}
               onChange={(e) => setNewMessage(e.target.value)}
               type="text"
             />
-            <button className="">
-              <ArrowUp />
-            </button>
+
+            {newMessage.length !== 0 && (
+              <button className="m-1.5 rounded-full bg-blue-600 p-1.5 transition-colors duration-300 hover:bg-blue-500">
+                <ArrowUp />
+              </button>
+            )}
           </form>
         </div>
         {/* phone buttons */}
