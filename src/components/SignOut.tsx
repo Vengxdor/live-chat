@@ -9,7 +9,14 @@ function SignOut() {
       console.error(error)
     }
   }
-  return <button onClick={handleSignOut}>Sign Out</button>
+  return (
+    <button
+      className="relative z-50 rounded-xl bg-red-700 p-1 px-2 transition duration-300 hover:bg-red-500"
+      onClick={handleSignOut}
+    >
+      Sign Out
+    </button>
+  )
 }
 
 export default SignOut

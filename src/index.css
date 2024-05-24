@@ -55,9 +55,13 @@ button:focus-visible {
 
 
 .sent {
-  color: greenyellow;
+  justify-content: end;
 }
 
-.received {
-  color: cadetblue;
+.sent p {
+  @apply bg-blue-600
+}
+
+.received p {
+  @apply bg-zinc-700
 }
